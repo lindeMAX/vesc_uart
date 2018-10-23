@@ -6,11 +6,11 @@ on a RaspberryPi Zero W via uart.
 
 It's done by following the instructions at http://vedder.se/2015/10/communicating-with-the-vesc-using-uart/.  
 But the code provided in https://github.com/vedderb/bldc_uart_comm_stm32f4_discovery is a bit outdated.  
-So i made some changes to bldc_interface.c especially the bldc_interface_process_packet() function and datatypes.h.  
+So i made some changes to **bldc_interface.c**, especially the **bldc_interface_process_packet() function**, and **datatypes.h**.  
 
-Now (at least) the bldc_interface_get_values() function and bldc_interface_process_packet()  (the "COMM_GET_VALUES" part)
-are working properly at hardware version 4.10 with the 3.40 firmware installed.  
-This is what i have tested!  
+Now (at least) **bldc_interface_get_values()** and **bldc_interface_process_packet()  (the "COMM_GET_VALUES" part)**
+are working properly at _hardware version 4.10_ with the _3.40 firmware_ installed.  
+That's is what i have tested!  
 
 If you want to port this to another hardware than Pi Zero, you just have to reimplement uart.h and uart.c.  
 You will find the instructions for that, as mentioned before, at http://vedder.se/2015/10/communicating-with-the-vesc-using-uart/.
