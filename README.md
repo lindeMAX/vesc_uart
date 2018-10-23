@@ -9,7 +9,7 @@ But the code provided in https://github.com/vedderb/bldc_uart_comm_stm32f4_disco
 So i made some changes to **bldc_interface.c**, especially the **bldc_interface_process_packet() function**, and **datatypes.h**.  
 
 Now (at least) **bldc_interface_get_values()** and **bldc_interface_process_packet()  (the "COMM_GET_VALUES" part)**
-are working properly at _hardware version 4.10_ with the _3.40 firmware_ installed.  
+are working properly at **hardware version 4.10** with the **3.40 firmware** installed.  
 That's is what i have tested!  
 
 If you want to port this to another hardware than Pi Zero, you just have to reimplement uart.h and uart.c.  
