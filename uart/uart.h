@@ -1,6 +1,8 @@
 /* This lib manages the uart communication
  * Big parts of the code are copied from:
- * http://www.tldp.org/HOWTO/Serial-Programming-HOWTO/x115.html *  * The vesc uart part is made followed by the instructions on: * http://vedder.se/2015/10/communicating-with-the-vesc-using-uart/ */
+ * http://www.tldp.org/HOWTO/Serial-Programming-HOWTO/x115.html *  
+ * The vesc uart part is made followed the instructions on: * http://vedder.se/2015/10/communicating-with-the-vesc-using-uart/ 
+*/
 
 #ifndef UART_h
 #define UART_h
