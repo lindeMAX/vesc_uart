@@ -124,29 +124,27 @@ void *get_values(void *val) {
 void comm_uart_init(void) {
 	// Initialize your UART...
 	uart_init();
-    //Initialize packet handler
-    // packet_init()
 	// Initialize the bldc interface and provide your send function
 	bldc_interface_uart_init(uart_transmit);
 	// Somewhere in your init code you can set your callback function(s).
 	bldc_interface_set_rx_value_func(bldc_val_received);
 	// start the sget_values_thread
 	int rc = pthread_create(&get_values_thread, NULL, &get_values, NULL);
-    if (rc != 0)
-    {
-        printf("Failed creating get_values_thread!");
-        exit(-1);
-    }
+    	if (rc != 0)
+    	{
+        	printf("Failed creating get_values_thread!");
+        	exit(-1);
+    	}
 }
 
 void bldc_val_received(mc_values *val) {
 	printf("Input voltage: %.2f V\r\n", val->v_in);
 	printf("Temp_Mosf:     %.2f degC\r\n", val->temp_mos);
-    printf("Temp_Motor:    %.2f degC\r\n", val->temp_motor);
+    	printf("Temp_Motor:    %.2f degC\r\n", val->temp_motor);
 	printf("Current motor: %.2f A\r\n", val->current_motor);
 	printf("Current in:    %.2f A\r\n", val->current_in);
 	printf("eRPM:          %.1f eRPM\r\n", val->rpm);
-    printf("RPM:           %.1f RPM\r\n", val->rpm / (12 / 2));     // rpm = erpm / motor_pole_pairs
+    	printf("RPM:           %.1f RPM\r\n", val->rpm / (12 / 2));     // rpm = erpm / motor_pole_pairs
 	printf("Duty cycle:    %.1f %%\r\n", val->duty_now * 100.0);
 	printf("Ah Drawn:      %.4f Ah\r\n", val->amp_hours);
 	printf("Ah Regen:      %.4f Ah\r\n", val->amp_hours_charged);
@@ -155,7 +153,7 @@ void bldc_val_received(mc_values *val) {
 	printf("Tacho:         %i counts\r\n", val->tachometer);
 	printf("Tacho ABS:     %i counts\r\n", val->tachometer_abs);
 	printf("Fault Code:    %s\r\n", bldc_interface_fault_to_string(val->fault_code));
-    printf("\n\n");
+    	printf("\r\n");
 }
 
 // exec by set_erpm_thread
