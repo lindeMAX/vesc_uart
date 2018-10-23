@@ -1,8 +1,8 @@
 # vesc_uart
-communicating with vesc via uart
+**communicating with vesc via uart**
 
 This is an example of how to get the motor contol values from the vesc and set the rpm  
-on a RaspberryPi Zero W via uart.
+on a **RaspberryPi Zero W** via uart.
 
 It's done by following the instructions at http://vedder.se/2015/10/communicating-with-the-vesc-using-uart/.  
 But the code provided in https://github.com/vedderb/bldc_uart_comm_stm32f4_discovery is a bit outdated.  
