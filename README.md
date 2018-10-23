@@ -15,6 +15,9 @@ This is what i have tested!
 If you want to port this to another hardware than Pi Zero, you just have to reimplement uart.h and uart.c.
 You will find the instructions for that, as mentioned before, at http://vedder.se/2015/10/communicating-with-the-vesc-using-uart/.
 
+To compile it for the Pi Zero use the toolchains given in https://github.com/raspberrypi/tools with the following command:
+"path to toolchain"/arm-linux-gnueabihf-gcc -pthread -mcpu=arm1176jzf-s -mfpu=vfp -std=c99 -g -Wall -o/media/max/RastermannPi/firmware/RastermannPi/bin/debug/RastermannPi uart/libs_vesc_uart/packet.c uart/libs_vesc_uart/crc.c uart/libs_vesc_uart/buffer.c uart/libs_vesc_uart/bldc_interface_uart.c uart/libs_vesc_uart/bldc_interface.c uart/uart.c main.c
+
 If everything works, fine you should get some output like this:
 
 Input voltage: 12.60 V
