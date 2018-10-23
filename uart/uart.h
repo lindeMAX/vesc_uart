@@ -1,4 +1,4 @@
-/* This lib manages the uart communication of the RastermannCNC
+/* This lib manages the uart communication
  * Big parts of the code are copied from:
  * http://www.tldp.org/HOWTO/Serial-Programming-HOWTO/x115.html *  * The vesc uart part is made followed by the instructions on: * http://vedder.se/2015/10/communicating-with-the-vesc-using-uart/ */
 
@@ -12,7 +12,7 @@
 #include <fcntl.h>
 #include <sys/signal.h>
 #include <sys/types.h>
-#include <pthread.h>        // for multithreading (check for recieved data)
+#include <pthread.h>        // for multithreading 
 
 // for vesc
 #include "libs_vesc_uart/bldc_interface_uart.h"
